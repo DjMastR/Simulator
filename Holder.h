@@ -20,6 +20,8 @@ public:
     Holder(const Holder& holder);
     ~Holder();
 
+    void INIT(std::list<Holder> &list, std::string fileName);
+
     void setETH(double param);
     void setMagic(double param);
     void setToken(double param);
@@ -35,6 +37,5 @@ public:
 
     void display();
 };
-
 
 #endif //SZIM_HOLDER_H

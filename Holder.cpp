@@ -87,3 +87,7 @@ void Holder::display() {
 Holder::~Holder() {
     invetory.clear();
 }
+
+void Holder::INIT(std::list<Holder> &list, std::string fileName) {
+
+}

@@ -28,6 +28,7 @@ public:
     cardType getType() const;
     cardColor getColor() const;
 
+    bool operator==(const NFT& param);
 };
 
 std::ostream& operator<<(std::ostream& os, const NFT& other);

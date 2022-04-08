@@ -17,10 +17,9 @@ private:
     double token;
 public:
     explicit Holder(double ethp = 0, double magicp = 0, double tokenp = 0);
+    Holder(std::string FileName);
     Holder(const Holder& holder);
     ~Holder();
-
-    void INIT(std::list<Holder> &list, std::string fileName);
 
     void setETH(double param);
     void setMagic(double param);
@@ -32,10 +31,17 @@ public:
     double getToken() const;
 
     void addNFT(const NFT& param);
+    void removeNFT(const NFT& param);
     NFT& findNFT(long long unsigned Id);
     NFT& findNFT(const NFT& nft);
 
     void display();
+
+    Holder& operator+(const NFT& param);
+    Holder& operator-(const NFT& param);
+    void operator+=(const NFT& param);
+    void operator-=(const NFT&);
+
 };
 
 #endif //SZIM_HOLDER_H

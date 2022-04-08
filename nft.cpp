@@ -65,6 +65,13 @@ cardColor NFT::getColor() const {
     return color;
 }
 
+bool NFT::operator==(const NFT &param) {
+    if(this->getID() == param.getID())
+        return true;
+    return false;
+}
+
+
 std::ostream &operator<<(std::ostream &os, const NFT &other) {
     os << "ID: " << other.getID() << std::endl << "Art ID: " << other.getArtID() << std::endl;
     os << other.getType() << " of " << other.getColor() << "s" << std::endl;

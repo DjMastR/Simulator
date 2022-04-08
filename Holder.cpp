@@ -63,6 +63,10 @@ void Holder::addNFT(const NFT &param) {
     invetory.insert(invetory.begin(), 1, param);
 }
 
+void Holder::removeNFT(const NFT& param){
+    invetory.remove(param);
+}
+
 NFT& Holder::findNFT(const long long unsigned Id){
     for(auto it = invetory.begin(); it != invetory.end(); it++)
         if(it->getID() == Id)
@@ -88,6 +92,20 @@ Holder::~Holder() {
     invetory.clear();
 }
 
-void Holder::INIT(std::list<Holder> &list, std::string fileName) {
+Holder& Holder::operator+(const NFT& param){
+    this->addNFT(param);
+    return *this;
+}
 
+void Holder::operator+=(const NFT& param){
+    *this + param;
+}
+
+Holder &Holder::operator-(const NFT& param) {
+    this->removeNFT(param);
+    return *this;
+}
+
+void Holder::operator-=(const NFT &param) {
+    *this - param;
 }
